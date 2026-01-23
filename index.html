@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODUS | Extended Space</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <nav>
+        <div class="brand">PRINCE KHAND THAKURI</div>
+        <div class="menu-btn" id="menuToggle">Menu</div>
+    </nav>
+
+    <div class="full-menu" id="fullMenu">
+        <!-- Removed href="#" to prevent default jumping, handled in JS -->
+        <a href="#" class="menu-link" data-target="0">01. Home</a>
+        <a href="#" class="menu-link" data-target="3000">02. Works</a>
+        <a href="#" class="menu-link" data-target="6000">03. About</a>
+        <a href="#" class="menu-link" data-target="15000">04. Contact</a>
+        <br><br>
+        <p style="font-size: 0.8rem; letter-spacing: 2px; opacity:0.7;">CLOSE MENU TO CONTINUE FLIGHT</p>
+    </div>
+
+    <div class="scroll-stage"></div>
+
+    <div class="viewport">
+        
+        <!-- SECTION 1: HERO -->
+        <section class="section" id="sec-1">
+            <div class="content-layer">
+                <span class="label">01 // Welcome</span>
+                <h1 class="fluid-text">ELECTRONICS<br>FROM VOID</h1>
+                <p class="fluid-text">Hi, I’m Prince, an electronics engineer specializing in PCB design and automation. I focus on creating efficient, real-world engineering solutions.</p>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="src\Prince_Photo.png" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="src\Prince_Photo.png" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="src\Prince_Photo.png" alt="Front"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PROJECT 1 -->
+        <section class="section reverse" id="sec-2">
+            <div class="content-layer">
+                <span class="label">02 // Selected Work</span>
+                <h1 class="fluid-text">ELECTRICAL<br>GUY</h1>
+                <p class="fluid-text">Electrical installations, AC work, and power system.</p>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Front"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ABOUT ME (Detail Section) -->
+        <section class="section" id="sec-3">
+            <div class="content-layer">
+                <span class="label">03 // About Me</span>
+                <h1 class="fluid-text">THE<br>ARCHITECT</h1>
+                <p class="fluid-text">I am a multidisciplinary designer obsessed with Electronics, Hardwares and codes.</p>
+                <div class="detail-list">
+                    <div class="detail-item">Based in Vantaa, Finland</div>
+                    <div class="detail-item">5+ Years Experience</div>
+                    <div class="detail-item">Focus on Electronics and Automation</div>
+                </div>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="https://i.pinimg.com/736x/ce/15/6a/ce156a83acc5243d28a0a42823e73c7e.jpg" alt="Front"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROJECT 2 -->
+        <section class="section reverse" id="sec-4">
+            <div class="content-layer">
+                <span class="label">04 // Selected Work</span>
+                <h1 class="fluid-text">Electronics Lab</span><br>Assistant</h1>
+                <p class="fluid-text">Managed the calibration and maintenance of essential lab instrumentation, 
+            ensuring optimal performance of Power Supplies, VNAs, Spectrum Analyzers, and Oscilloscopes.</p>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="https://i.pinimg.com/736x/cd/af/4d/cdaf4db0e46f959ca46f63c52e605c59.jpg" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="https://i.pinimg.com/736x/cd/af/4d/cdaf4db0e46f959ca46f63c52e605c59.jpg" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="https://i.pinimg.com/736x/cd/af/4d/cdaf4db0e46f959ca46f63c52e605c59.jpg" alt="Front"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SERVICES (Detail Section) -->
+        <section class="section" id="sec-5">
+            <div class="content-layer">
+                <span class="label">05 // Capabilities</span>
+                <h1 class="fluid-text">SKILL<br>SET</h1>
+                <p class="fluid-text"> Electronics engineering skills focused on hardware design, automation, and real-world systems.</p>
+                <div class="detail-list">
+                    <div class="detail-item">Electronics Circuit Design</div>
+                    <div class="detail-item">PCB Design & Layout</div>
+                    <div class="detail-item">Embedded Systems (ESP32 / Arduino)</div>
+                    <div class="detail-item">Automation & Control Wiring</div>
+                    <div class="detail-item">Power Systems & Electrical Installations</div>
+                    <div class="detail-item">Testing, Debugging & Troubleshooting</div>
+                </div>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="https://picsum.photos/seed/c1/600/800" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="https://picsum.photos/seed/c2/600/800" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="https://picsum.photos/seed/c3/600/800" alt="Front"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CONTACT -->
+        <section class="section reverse" id="sec-6">
+            <div class="content-layer">
+                <span class="label">06 // Contact</span>
+                <h1 class="fluid-text">HIRE<br>ME?</h1>
+                <p class="fluid-text">More about me on the files!</p>
+                <div class="detail-list">
+                    <div class="detail-item" style="color: white; font-size: 1.2rem;">princekhand09@gmail.com</div>
+                </div>
+            </div>
+            <div class="visual-stack">
+                <div class="holo-card card-3"><img src="https://picsum.photos/seed/t1/600/800" alt="Deep"></div>
+                <div class="holo-card card-2"><img src="https://picsum.photos/seed/t2/600/800" alt="Mid"></div>
+                <div class="holo-card card-1"><img src="https://picsum.photos/seed/t3/600/800" alt="Front"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Link to JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
