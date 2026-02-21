@@ -54,9 +54,9 @@ window.addEventListener('resize', resize);
 initStars();
 
 
-// --- 2. FLUID MOUSE ---
+// --- 2. SIMPLE FLUID MOUSE MOVEMENT ---
 const textElements = document.querySelectorAll('.fluid-text, .label');
-const imageElements = document.querySelectorAll('.holo-card'); // Add images to fluid effect
+const imageElements = document.querySelectorAll('.holo-card');
 let mouseX = 0; let mouseY = 0;
 let currentMouseX = 0; let currentMouseY = 0;
 
@@ -69,28 +69,48 @@ function animateMouse() {
     currentMouseX += (mouseX - currentMouseX) * 0.1;
     currentMouseY += (mouseY - currentMouseY) * 0.1;
 
-    // Fluid effect for text elements
+    // Simple fluid movement for text elements
     textElements.forEach(el => {
         const moveX = currentMouseX * -0.03; 
         const moveY = currentMouseY * -0.03;
         el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        
         if(el.tagName === 'H1') {
             el.style.textShadow = `${-moveX * 2}px ${-moveY * 2}px 20px rgba(0,0,0,1)`;
         }
     });
 
-    // Fluid effect for image elements
+    // Simple fluid movement for image elements - handle different layouts
     imageElements.forEach(el => {
-        const moveX = currentMouseX * -0.02; // Slightly less movement for images
+        const moveX = currentMouseX * -0.02;
         const moveY = currentMouseY * -0.02;
-        const currentTransform = el.style.transform || '';
-        // Preserve existing transforms and add fluid movement
-        if (currentTransform.includes('translate(')) {
-            // If already has translate, replace it
-            el.style.transform = currentTransform.replace(/translate\([^)]*\)/, `translate(${moveX}px, ${moveY}px)`);
+        
+        // Get the section this card belongs to
+        const section = el.closest('.section');
+        const sectionId = section ? section.id : '';
+        
+        // Apply different positioning based on section and card
+        if (sectionId === 'sec-1') {
+            // Section 1: Three boxes with side ones shorter
+            let baseX = 0;
+            if (el.classList.contains('card-1')) baseX = -120;
+            if (el.classList.contains('card-3')) baseX = 120;
+            el.style.transform = `translateX(${baseX}px) translate(${moveX}px, ${moveY}px)`;
+            
+        } else if (sectionId === 'sec-3') {
+            // Section 3: Two boxes (left and right)
+            let baseX = 0;
+            if (el.classList.contains('card-1')) baseX = -80;
+            if (el.classList.contains('card-3')) baseX = 80;
+            el.style.transform = `translateX(${baseX}px) translate(${moveX}px, ${moveY}px)`;
+            
+        } else if (sectionId === 'sec-5') {
+            // Section 5: Single center box
+            el.style.transform = `translateX(0px) translate(${moveX}px, ${moveY}px)`;
+            
         } else {
-            // Add translate to existing transform
-            el.style.transform = currentTransform + ` translate(${moveX}px, ${moveY}px)`;
+            // For reverse sections or others, just apply fluid movement
+            el.style.transform = `translate(${moveX}px, ${moveY}px)`;
         }
     });
     
